@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+// import { Link } from 'react-router-dom'
 
 export default function TextForm(props) {
   const [text,setText]= useState("");
@@ -51,22 +52,22 @@ const handleSpaces2= (event)=>{
 
   return (
     <>
-    <div>
+    <div className='container'>
 
       <div className="mb-3">
-        <label htmlFor="myBox" className="form-label">{props.heading} </label>
+        <label htmlFor="myBox" className="form-label"><h2>{props.heading} </h2></label>
         <textarea className="form-control" onChange={handleOnChange} value={text} id="myBox" rows="3"></textarea>
       </div>
-      <button className='btn btn-primary mx-2' onClick={handleUPClick}>Convert to UPPERCASE</button>
-      <button className='btn btn-primary mx-3' onClick={handleLOWClick}>Convert to lowercase</button>
-      <button className='btn btn-primary mx-3' onClick={handleIFChange}>Clear text</button>
-      <button className='btn btn-primary mx-3' onClick={handleCopy}>Copy text</button>
-      <button className='btn btn-primary mx-3' onClick={handleSpaces2}>Remove extra spaces</button>
+      <button disabled={text.length===0} className='btn btn-primary my-1' onClick={handleUPClick}>Convert to UPPERCASE</button>
+      <button  disabled={text.length===0} className='btn btn-primary mx-3 my-1' onClick={handleLOWClick}>Convert to lowercase</button>
+      <button  disabled={text.length===0} className='btn btn-primary mx-3 my-1' onClick={handleIFChange}>Clear text</button>
+      <button  disabled={text.length===0} className='btn btn-primary mx-3 my-1' onClick={handleCopy}>Copy text</button>
+      <button  disabled={text.length===0} className='btn btn-primary mx-3 my-1' onClick={handleSpaces2}>Remove extra spaces</button>
     </div>
     
     <div className='continer my-3'>
-      <h1>The second util is here - text summary</h1>
-      <p>{text.split(" ").length} words and {text.length} letters takes {0.008 *text.split(" ").length } minutes to read</p>
+      <h2>The second util is here - text summary</h2>
+      <p>{text.split(" ").filter((element)=> {return element.length!==0}).length} words and {text.length} letters takes {0.008 *text.split(" ").filter((element)=> {return element.length!==0}).length } minutes to read</p>
       <h3>Preview</h3>
       <p>{text.length>0?text:"Enter text in text box to preview here"}</p>
     </div>

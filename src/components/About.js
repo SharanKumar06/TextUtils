@@ -33,53 +33,59 @@ setStyle({
             color:'black',
             backgroundColor: 'white'
         })
+
     }
+let accorStyle ={
+    color: 'solid black',
+    backgroundColor: props.mode=== 'dark'? 'grey':'white',
+}
+
   return (<>
     <div className='container my-5' style={{color: props.mode==='dark'?'black': 'white', backgroundColor: props.mode==='dark'?'white': 'grey'  }}>
         <h1>About us</h1>
-        <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" style={{backgroundColor: props.mode==='dark'?'grey': 'white' }} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Accordion Item #1
+        <div className="accordion" id="accordionExample">
+        <div className="accordion-item">
+            <h2 className="accordion-header" id="headingOne">
+            <button className="accordion-button" style={accorStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+               <strong>Description:</strong>
             </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div className="accordion-body">
+                <strong>Utilities:</strong> We can perform various utilities on the text. We can convert the text to uppercase, lowercase, remove extra spaces, copy the text, clear the text, etc.
             </div>
             </div>
         </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" style={{backgroundColor: props.mode==='dark'?'grey': 'white' }} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Accordion Item #2
+        <div className="accordion-item">
+            <h2 className="accordion-header" id="headingTwo">
+            <button className="accordion-button collapsed" style={accorStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+               <strong>Modes:</strong>
             </button>
             </h2>
-            <div id="collapseTwo"  class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div id="collapseTwo"  className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div className="accordion-body">
+                <strong>Dark and Light: </strong>We can operate in two modes: Dark and Light. We can also toggle between the two modes.
             </div>
             </div>
         </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" style={{backgroundColor: props.mode==='dark'?'grey': 'white' }} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Accordion Item #3
+        <div className="accordion-item">
+            <h2 className="accordion-header" id="headingThree">
+            <button className="accordion-button collapsed" style={accorStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <strong>Others:</strong>
             </button>
             </h2>
-            <div id="collapseThree" class="accordion-collapse collapse"  aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div id="collapseThree" className="accordion-collapse collapse"  aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div className="accordion-body">
+                <strong>Whats different from normal wordpad?</strong> It has many included functions over the normal wordpad like converting the text to uppercase, lowercase, removing extra spaces, copying the text, clearing the text, etc.
             </div>
             </div>
         </div>
         </div>
         <div className='container my-2'>
 
-        <button type="button" class="btn btn-dark mx-3" onClick={TurnDark}>Enable Dark-Mode</button>
-        <button type="button" class="btn btn-dark mx-3" onClick={TurnLight}>Enable LightMode</button>
-        <button type="button" class="btn btn-dark mx-3 my-3" onClick={ToggleMode} >Toggle mode</button>
+        <button type="button" className="btn btn-dark mx-3" onClick={TurnDark}>Enable Dark-Mode</button>
+        <button type="button" className="btn btn-dark mx-3" onClick={TurnLight}>Enable LightMode</button>
+        <button type="button" className="btn btn-dark mx-3 my-3" onClick={ToggleMode} >Toggle mode</button>
         </div>
     </div>
     </>
